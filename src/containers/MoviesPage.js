@@ -3,8 +3,8 @@ import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import MoviesList from '../components/MoviesList';
 import MovieShow from './MovieShow';
- 
-const MoviesPage = ({ match, movies }) => 
+
+const MoviesPage = ({ match, movies }) =>
   <div>
     <MoviesList movies={movies} />
     <Route path={`${match.url}/:movieId`} component={MovieShow}/>
@@ -12,11 +12,11 @@ const MoviesPage = ({ match, movies }) =>
       <h3>Please select a Movie from the list.</h3>
     )}/>
   </div>;
- 
+
 const mapStateToProps = (state) => {
   return {
     movies: state.movies
   };
 }
- 
+
 export default connect(mapStateToProps)(MoviesPage);
